@@ -1,1 +1,415 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@700&display=swap');
+@import 'swiper/less';
+@import 'swiper/less/navigation';
+@import 'swiper/less/pagination';
+
+@intro-bgnd: rgba(255, 255, 255, .8);
+@skills-bgnd-from: white;
+@skills-bgnd-to: rgb(254, 249, 193);
+@skills-bgnd-hover-to: rgb(255, 201, 101);
+@work-bgnd-from: rgb(254, 249, 193);
+@work-bgnd-to: rgb(193, 248, 254);
+@work-bgnd-hover-to: rgb(102, 179, 255);
+@about-bgnd-from: rgb(193, 248, 254);
+@about-bgnd-to: rgb(254, 249, 193);
+@about-bgnd-hover-to: rgb(255, 201, 101);
+@contact-bgnd-from: rgb(254, 249, 193);
+@contact-bgnd-to: rgb(255, 165, 165);
+@contact-bgnd-hover-to: white;
+@body-font: 'Montserrat', sans-serif;
+@font-title: 'Oswald', sans-serif;
+@default-font-color: rgb(77, 77, 77);
+@hover-font-color: rgb(150, 2, 2);
+@project-color: rgb(24, 67, 114);
+@project-exp-color: rgb(37, 104, 176);
+
+body {
+    font-family: @body-font;
+    color: @default-font-color;
+}
+
+h2 {
+    font-family: @font-title;
+    font-size: 3em;
+}
+
+a:link, a:active, a:visited {
+    color: @project-color;
+    text-decoration: none;
+}
+
+a:hover {
+    color: @hover-font-color;
+    text-decoration: underline;
+}
+
+div.background {
+    background-image: url("assets/lisboa01.jpg");
+    background-size: cover;
+    background-position: right center;
+
+    padding: 200px 0;
+}
+
+section#Home {    
+    div.intro {     
+        background-color: @intro-bgnd;
+        margin: 0;
+        border-radius: 10px;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+
+        div.photo {
+            flex: 1;
+        }
+
+        div.info {
+            flex: 5;            
+            margin-left: 20px;
+
+            p.hello {
+                margin: 20px 0 0;
+                font-size: 0.8em;
+            }
+            h1.bigName {
+                font-family: @font-title;
+                font-size: 4em;
+            }
+            p.creative {
+                font-size: 1.2em;
+            }
+        }
+    }
+    
+}
+
+@media(max-width: 767px) {
+    section#Home {    
+        div.intro {            
+            flex-direction: column;
+        }
+    }
+
+    section#Skills {
+        div.skills {
+            flex-direction: column;
+        }
+    }
+
+    section#Work {
+        div.projects {
+            flex-direction: column;
+        }
+    }
+}
+
+@media(max-width: 992px) {
+    section#About {
+        div.moreAbout {
+            flex-direction: column;
+        }
+    }
+}
+
+section#Skills {
+    padding: 100px 0;
+
+    &.gradient {
+        position: relative;
+        background-image: linear-gradient(
+            to bottom,
+            @skills-bgnd-from,
+            @skills-bgnd-to
+        );
+        z-index: 1;
+    }
+    
+    &.gradient::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(
+            to bottom,
+            @skills-bgnd-to,
+            @skills-bgnd-hover-to
+        );
+        z-index: -1;
+        transition: opacity 0.5s linear;
+        opacity: 0;
+    }
+    
+    &.gradient:hover::before {
+        opacity: 1;
+    }
+
+    div.skills {
+        display: flex;
+    }
+
+    div.skill-items {
+        margin: 20px;
+        flex: 1;
+    }
+
+    h2 {
+        margin-bottom: 40px;
+        text-align: left;
+    }
+
+    h3 {
+        margin: 0 0 10px 20px;
+    }
+
+    h4 {
+        margin: 0 0 10px 40px;
+    }
+
+    p.items {
+        margin: 0 0 20px 60px;
+    }
+}
+
+section#Work {
+    padding: 100px 0;
+
+    &.gradient {
+        position: relative;
+        background-image: linear-gradient(
+            to bottom,
+            @work-bgnd-from,
+            @work-bgnd-to
+        );
+        z-index: 1;
+    }
+    
+    &.gradient::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(
+            to bottom,
+            @work-bgnd-to,
+            @work-bgnd-hover-to
+        );
+        z-index: -1;
+        transition: opacity 0.5s linear;
+        opacity: 0;
+    }
+    
+    &.gradient:hover::before {
+        opacity: 1;
+    }
+
+    h2 {
+        margin-bottom: 40px;
+        text-align: left;
+    }
+
+    h3 {
+        margin: 30px 0 10px 10px;
+    }
+    
+    
+
+    p.explain {
+        margin-left: 10px;
+    }
+
+    p.link {
+        font-size: 0.8em;
+        margin-top: 20px;
+        text-align: center;
+
+        
+    }
+
+    div.projects {
+        display: flex;
+        flex-wrap: wrap;
+
+        div.item {
+            flex: 1;
+            min-width: 33%;
+            padding: 20px;
+
+            h4 {
+                text-align: center;
+                font-size: 1.1em;
+                color: @project-color;
+            }
+
+            p.project {
+                color: @project-exp-color;
+                font-size: 0.9em;
+            }
+        }
+
+        
+    }
+
+    div.articles {
+        display: flex;
+        flex-wrap: wrap;
+
+        div.item {
+            flex: 1;
+            min-width: 33%;
+            padding: 20px;
+
+            p {
+                text-align: center;
+                
+                a {
+                    font-size: 0.9em;
+                    color: @project-color;
+                }
+
+                a:link, a:active, a:visited {
+                    color: @default-font-color;
+                    text-decoration: none;
+                }
+        
+                a:hover {
+                    color: @hover-font-color;
+                    text-decoration: underline;
+                }
+            }
+
+            
+        }
+
+        
+    }
+}
+
+section#About {
+    padding: 100px 0;
+
+    h2 {
+        margin-bottom: 40px;
+        text-align: left;
+    }
+
+    &.gradient {
+        position: relative;
+        background-image: linear-gradient(
+            to bottom,
+            @about-bgnd-from,
+            @about-bgnd-to
+        );
+        z-index: 1;
+    }
+    
+    &.gradient::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(
+            to bottom,
+            @about-bgnd-to,
+            @about-bgnd-hover-to
+        );
+        z-index: -1;
+        transition: opacity 0.5s linear;
+        opacity: 0;
+    }
+    
+    &.gradient:hover::before {
+        opacity: 1;
+    }
+
+    div.moreAbout {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        align-items: center;
+
+        div.photo {
+            flex: 1;
+            max-width: 500px;
+            
+            div.photoBook {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        div.text {
+            flex: 1;
+        }
+    }
+}
+
+section#Contact {
+    padding: 100px 0;
+
+    h2 {
+        margin-bottom: 40px;
+        text-align: left;
+    }
+
+    &.gradient {
+        position: relative;
+        background-image: linear-gradient(
+            to bottom,
+            @contact-bgnd-from,
+            @contact-bgnd-to
+        );
+        z-index: 1;
+    }
+    
+    &.gradient::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(
+            to bottom,
+            @contact-bgnd-to,
+            @contact-bgnd-hover-to
+        );
+        z-index: -1;
+        transition: opacity 0.5s linear;
+        opacity: 0;
+    }
+    
+    &.gradient:hover::before {
+        opacity: 1;
+    }
+
+    div.social {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        max-width: 500px;
+        margin: 0 auto 30px;
+
+        img {
+            flex: 1;
+            max-width: 50px;
+        }
+    }
+
+    div.email {
+        form {
+            label, #emailHelp {
+                font-size: 0.8em;
+            }
+        }
+    }
+}
