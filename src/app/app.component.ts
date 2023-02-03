@@ -35,5 +35,5 @@ export class AppComponent implements OnInit {
       'is-valid': fieldControl?.valid && fieldControl?.touched,
       'is-invalid': !fieldControl?.valid && fieldControl?.touched
     };
-  }
+  } 
 }

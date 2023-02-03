@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "mm-portfolio-3c551"
+  },
+  "targets": {
+    "mm-portfolio-3c551": {
+      "hosting": {
+        "MM_Portfolio": [
+          "mm-portfolio-3c551"
+        ]
+      }
+    }
+  }
+}

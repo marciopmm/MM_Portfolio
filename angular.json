@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "MM_Portfolio:build:production",
+            "firebaseProject": "mm-portfolio-3c551",
+            "firebaseHostingSite": "mm-portfolio-3c551"
+          }
         }
       }
     }
