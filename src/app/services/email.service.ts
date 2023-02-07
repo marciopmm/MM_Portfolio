@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
-import { FunctionsInstances } from '@angular/fire/functions'
+import { AngularFireFunctions } from '@angular/fire/compat/functions';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmailService {
 
-  constructor(private fns: FunctionsInstances) { }
+  constructor(private fns: AngularFireFunctions) {}
 
-  sendEmail(nome: string, email: string, key: string) {
-    let callable = this.fns.httpsCallable('sendMail');
+  sendGMail(name: string, email: string, message: string) {
+    let callable = this.fns.httpsCallable('sendGMail');
     let data = { 
-      nome: nome,
-      dest: email,
-      key: key 
+      "name": name,
+      "email": email,
+      "message": message 
     };
-    console.log("data: ", data);
     return callable(data);
-    // https://us-central1-mm-poker.cloudfunctions.net/sendMail
+    // https://us-central1-mm-portfolio-3c551.cloudfunctions.net/sendGMail
+    // http://localhost:5000/mm-portfolio-3c551/us-central1/sendGMail
   }
 }

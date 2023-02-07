@@ -22,6 +22,7 @@
 @hover-font-color: rgb(150, 2, 2);
 @project-color: rgb(24, 67, 114);
 @project-exp-color: rgb(37, 104, 176);
+@background-email-color: rgba(200, 200, 200, 0.6);
 
 body {
     font-family: @body-font;
@@ -49,6 +50,15 @@ div.background {
     background-position: right center;
 
     padding: 200px 0;
+}
+
+div#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    background-color: fade(@background-email-color, 60%);
+    z-index: 999;
 }
 
 section#Home {    
@@ -393,11 +403,11 @@ section#Contact {
     div.social {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 60px;
         align-items: center;
         justify-content: center;
         max-width: 500px;
-        margin: 0 auto 30px;
+        margin: 0 auto 60px;
 
         img {
             flex: 1;
@@ -406,6 +416,11 @@ section#Contact {
     }
 
     div.email {
+        margin: 40px;
+        border-radius: 10px;
+        padding: 40px;
+        background-color: @background-email-color;
+
         form {
             label, #emailHelp {
                 font-size: 0.8em;
