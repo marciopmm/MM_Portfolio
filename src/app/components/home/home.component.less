@@ -1,0 +1,42 @@
+@import "./../../../styles.less";
+
+section {    
+    div.background {
+        background-image: url("./../../../assets/lisboa01.jpg");
+        background-size: cover;
+        background-position: right center;
+    
+        padding: 200px 0;
+    }
+    
+    div.intro {     
+        background-color: @intro-bgnd;
+        margin: 0;
+        border-radius: 10px;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+
+        div.photo {
+            flex: 1;
+        }
+
+        div.info {
+            flex: 5;            
+            margin-left: 20px;
+
+            p.hello {
+                margin: 20px 0 0;
+                font-size: 0.8em;
+            }
+            h1.bigName {
+                font-family: @font-title;
+                font-size: 4em;
+            }
+            p.creative {
+                font-size: 1.1em;
+            }
+        }
+    }
+    
+}

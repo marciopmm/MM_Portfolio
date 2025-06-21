@@ -1,0 +1,83 @@
+@import "./../../../styles.less";
+
+section {
+    padding: 100px 0;
+
+    &.gradient {
+        position: relative;
+        background-image: linear-gradient(
+            to bottom,
+            @skills-bgnd-from,
+            @skills-bgnd-to
+        );
+        z-index: 1;
+    }
+    
+    &.gradient::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(
+            to bottom,
+            @skills-bgnd-to,
+            @skills-bgnd-hover-to
+        );
+        z-index: -1;
+        transition: opacity 0.5s linear;
+        opacity: 0;
+    }
+    
+    &.gradient:hover::before {
+        opacity: 1;
+    }
+
+    div.skills {
+        display: flex;
+    }
+
+    div.skill-items {
+        margin: 20px;
+        flex: 1;
+
+        .parentheses {
+            padding-left: 16px;
+            font-size: 0.5em;
+        }
+    }
+
+    h2 {
+        margin-bottom: 40px;
+        text-align: left;
+    }
+
+    h3 {
+        margin: 0 0 10px 20px;
+    }
+
+    h4 {
+        margin: 0 0 10px 40px;
+    }
+
+    p.items {
+        margin: 0 0 20px 60px;
+    }
+    
+    div.certlist {
+        p {
+            margin: 0 0 20px 60px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        ul {
+            margin: 0 0 20px 60px;
+        }
+        p.link {
+            margin: 0 0 20px 60px;
+            font-size: 0.8em;
+        }
+    }
+    
+}

@@ -1,0 +1,30 @@
+<p>Or, if you like, you can email me at <a href="mailto:marciopmm@gmail.com" title="my personal email" target="_blank">marciopmm@gmail.com</a>, or even fill your data in the form below, and I'll contact you.</p>
+<div class="email">
+    <form class="row g-3 needs-validation" novalidate [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+        <div class="col-md-6">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" required="true" formControlName="name" [ngClass]="applyCssError('name')">
+        <div class="invalid-feedback">
+            Please tell me your name.
+        </div>
+        </div>
+        <div class="col-md-6">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email" [ngClass]="applyCssError('email')">
+        <div id="emailHelp" class="form-text">I'll never share your email. Promisse 😇</div>
+        <div class="invalid-feedback">
+            Please use a valid email.
+        </div>
+        </div>
+        <div class="col-md-12">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" rows="3" formControlName="message" [ngClass]="applyCssError('message')"></textarea>
+        <div class="invalid-feedback">
+            Please write some words for me.
+        </div>
+        </div>
+        <div class="col-md-12">
+        <button type="submit" class="btn btn-success float-end" [disabled]="!formGroup.valid">Submit</button>
+        </div>
+    </form>
+</div>
