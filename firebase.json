@@ -1,6 +1,7 @@
 {
   "hosting": [
     {
+      "target": "MM_Portfolio",
       "public": "dist/mm-portfolio",
       "ignore": [
         "firebase.json",
